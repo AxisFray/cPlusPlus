@@ -111,9 +111,9 @@ cout << "------------------------------"
     cin >> num;
     if(num>=10 or num<0)
     {
-        UsunTabele();
+        menu();
     }
-    cout << "chcesz usunac tablice ?   [TAK] - 1"<< tab2[num] << endl;
+    cout << "chcesz usunac tablice ?   [TAK] - 1  "<< tab2[num] << endl;
     cin >>wybor1 ;
     if(wybor1!1)
     {
@@ -135,3 +135,31 @@ void Dodaj()
     a = sizeof(tab1)/sizeof(tab1[num]);
 
 }
+
+void Losuj()
+{
+    int tabela1;
+    cout << "------------------------------" << endl;
+    cout << "Ktora tabele chcesz wypelnic? "<<endl;
+    for(int i =0;i<10,i++)
+    {
+        cout << i<<".  "<< tab2[i] << endl;
+        cin >> tabela1;
+        cout << "Podaj przedzial od " << endl;
+        cin >> int przedzial1;
+        cout << "Podaj przedzial do " << endl;
+        cin >> int przedzial2;
+        for(i=0;i<(sizeof(tab1)/sizeof(tab1[0]));i++)
+        {
+            tab[tabela1][i]=rand()%przedzial2+przedzial1;
+            cout << tab[tabela1][i]<<endl;
+
+        }
+
+    }
+
+
+
+
+}
+
