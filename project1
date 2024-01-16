@@ -4,67 +4,68 @@
 #include <fstream>
 using namespace std;
 int menu();
-void Dodaj(),void Usun(),void Zmien(),Exit(),void Losuj(),void Tabela(),void DodTabele(),void UsunTabele();
-int x,iloscTabel = 0;
-int **tab1[10] = NULL;
+void Dodaj(), void Usun(), void Zmien(),void Exit(), void Losuj(), void Tabela(), void DodTabele(), void UsunTabele();
+int x, iloscTabel = 0;
+int tab1[10];
 string tab2[10];
 int main()
 {
-    while(true)
+    while (true)
     {
 
 
-    switch(menu())
-    {
-    case 1:
-        Tabela();
-        break;
-    case 2:
-        Dodaj();
-        break;
-    case 3:
-        Usun();
-        break;
-    case 4:
-        Zmien();
-        break;
-    case 5:
-        Losuj();
-        break;
-    default:
-        cout << "Nie ma takiej opcji, wybierz inną" << endl;
+        switch (menu())
+        {
+        case 1:
+            Tabela();
+            break;
+        case 2:
+            Dodaj();
+            break;
+        case 3:
+            Usun();
+            break;
+        case 4:
+            Zmien();
+            break;
+        case 5:
+            Losuj();
+            break;
+        default:
+            cout << "Nie ma takiej opcji, wybierz inną" << endl;
 
+        }
     }
 }
- }
 int menu()
 {
-    cout << "[1] ustawienia tabel   "<<endl;
-    cout << "[2] Dodaj element   "<<endl;
-    cout << "[3] Usun element   "<<endl;
-    cout << "[4] Zmien element  "<<endl;
-    cout << "[5] Losuj element   "<<endl;
-    cout << "[6] Wyjscie   "<<endl;
+    cout << "[1] ustawienia tabel   " << endl;
+    cout << "[2] Dodaj element   " << endl;
+    cout << "[3] Usun element   " << endl;
+    cout << "[4] Zmien element  " << endl;
+    cout << "[5] Losuj element   " << endl;
+    cout << "[6] Wyjscie   " << endl;
     cin >> x;
     return x;
 
 
 }
 void Tabela()
-{string nazwa;
-int a;
+{
+    string nazwa;
+    int a;
     cout << "Menu dodawania  i usuwania tabel";
-    cout << "[1] Dodaj tabele"<<endl;
+    cout << "[1] Dodaj tabele" << endl;
     cout << "[2] Usun tabele" << endl;
-    cout << "[3] Powrot"<<endl;
+    cout << "[3] Powrot" << endl;
     cin >> a;
-    switch(a)
+    switch (a)
     {
     case 1:
         DodTabele();
-        if(iloscTabel==10)
+        if (iloscTabel == 10)
         {
-            cout <<"Masz 10 tabel, nie można więcej!"<<endl;
+            cout << "Masz 10 tabel, nie można więcej!" << endl;
             Tabela();
         }
         break;
@@ -75,7 +76,7 @@ int a;
         menu();
         break;
     default:
-        system('Cls');
+        system('cls');
         cout << "Napisz poprawna cyfre" << endl;
         Tabela();
 
@@ -85,37 +86,38 @@ int a;
 void DodTabele()
 {
     int miejsca;
-    cout << "------------------------------"
-    cout << "Masz "<<iloscTabel<<" tabel"<<endl;
-    cout << "                              "<<endl;
-    cout << "Jak chcesz nazwać swoją tablice?"<<endl;
+    cout << "------------------------------" << endl;
+        cout << "Masz " << iloscTabel << " tabel" << endl;
+    cout << "                              " << endl;
+    cout << "Jak chcesz nazwać swoją tablice?" << endl;
     cin >> tab2[iloscTabel];
-    cout<< "Ile elementow w tablicy?" << endl;
+    cout << "Ile elementow w tablicy?" << endl;
     cin >> miejsca;
-    tab1[iloscTabel] = new int [miejsca];
+    tab1[iloscTabel] = new int[miejsca];
 
 
 }
 void UsunTabele()
-{int num = 0,wybor1;
+{
+    int num = 0, wybor1;
 
-cout << "------------------------------"
-    cout << "Masz "<<iloscTabel<<" tabel"<<endl;
-    cout << "                              "<<endl;
-    cout << "Jaka tablice chcesz usunac?"<<endl;
-    for(int i=0;i<10,i++)
+    cout << "------------------------------" << endl;
+        cout << "Masz " << iloscTabel << " tabel" << endl;
+    cout << "                              " << endl;
+    cout << "Jaka tablice chcesz usunac?" << endl;
+    for (int i = 0; i < 10, i++)
     {
-        cout << "["i"]. "<< tab2[i] <<"  zawiera  "<< sizeof(tab1)/sizeof(tab1[0]) <<" elementow "<< endl;
+        cout << "["<<i<<"]. " << tab2[i] << "  zawiera  " << sizeof(tab1) / sizeof(tab1[0]) << " elementow " << endl;
     }
-    cout << "Wpisz numer tablicy ktora chcesz usunac :" <<endl;
+    cout << "Wpisz numer tablicy ktora chcesz usunac :" << endl;
     cin >> num;
-    if(num>=10 or num<0)
+    if (num >= 10 or num < 0)
     {
         menu();
     }
-    cout << "chcesz usunac tablice ?   [TAK] - 1  "<< tab2[num] << endl;
-    cin >>wybor1 ;
-    if(wybor1!1)
+    cout << "chcesz usunac tablice ?   [TAK] - 1  " << tab2[num] << endl;
+    cin >> wybor1;
+    if (wybor1!=1)
     {
         menu();
     }
@@ -123,36 +125,38 @@ cout << "------------------------------"
     menu();
 }
 void Dodaj()
-{int num,a;
-    cout << "------------------------------"
+{
+    int num, a;
+    cout << "------------------------------" << endl;
     cout << "Do jakiej tablicy chcesz dodać elementy?" << endl;
-    for(int i=0;i<10,i++)
+    for (int i = 0; i < 10, i++)
     {
-        cout << "["i"]. "<< tab2[i] <<"  zawiera  "<< sizeof(tab1)/sizeof(tab1[0]) <<" elementow "<< endl;
+        cout << "["<<i<<"] " << tab2[i] << "  zawiera  " << sizeof(tab1) / sizeof(tab1[0]) << " elementow " << endl;
     }
-     cout << "Wpisz numer tablicy ktora chcesz usunac :" <<endl;
-     cin >> num;
-    a = sizeof(tab1)/sizeof(tab1[num]);
+    cout << "Wpisz numer tablicy ktora chcesz usunac :" << endl;
+    cin >> num;
+    a = sizeof(tab1) / sizeof(tab1[num]);
 
 }
 
 void Losuj()
 {
+    int przedzial1, przedzial2;
     int tabela1;
     cout << "------------------------------" << endl;
-    cout << "Ktora tabele chcesz wypelnic? "<<endl;
-    for(int i =0;i<10,i++)
+    cout << "Ktora tabele chcesz wypelnic? " << endl;
+    for (int i = 0; i < 10, i++)
     {
-        cout << i<<".  "<< tab2[i] << endl;
+        cout << i << ".  " << tab2[i] << endl;
         cin >> tabela1;
         cout << "Podaj przedzial od " << endl;
-        cin >> int przedzial1;
+        cin >> przedzial1;
         cout << "Podaj przedzial do " << endl;
-        cin >> int przedzial2;
-        for(i=0;i<(sizeof(tab1)/sizeof(tab1[0]));i++)
+        cin >> przedzial2;
+        for (i = 0; i < (sizeof(tab1) / sizeof(tab1[0])); i++)
         {
-            tab[tabela1][i]=rand()%przedzial2+przedzial1;
-            cout << tab[tabela1][i]<<endl;
+            tab1[tabela1][i] = rand() % przedzial2 + przedzial1;
+            cout << tab[tabela1][i] << endl;
 
         }
 
@@ -162,4 +166,3 @@ void Losuj()
 
 
 }
-
