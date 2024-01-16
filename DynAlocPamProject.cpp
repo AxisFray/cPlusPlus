@@ -3,7 +3,7 @@
 #include <fstream>
 
 using namespace std;
-void Dodaj(), Usun(), Losuj(), Wpisz(), menu(),Pokaz();
+void Dodaj(), Usun(), Losuj(), Wpisz(), menu(),Pokaz(),Zapisz(),Wczytaj();
 bool tablica1 = false;
 int* tablica;
 int rozmiar;
@@ -21,7 +21,9 @@ void menu()
 	cout << "[3]  Losuj zawartosc tablicy" << endl;
 	cout << "[4]  Wpisz zawartosc tablicy" << endl;
 	cout << "[5]  Pokaz tablice" << endl;
-	cout << "[6]  wyjscie" << endl;
+	cout << "[6]  Zapisz do pliku" << endl;
+	cout << "[7]  Wczytaj z pliku" << endl;
+	cout << "[8]  wyjscie" << endl;
 	int x;
 	cin >> x;
 	switch (x)
@@ -41,7 +43,13 @@ void menu()
 	case 5:
 		Pokaz();
 	case 6:
-		system("exit");
+		Zapisz();
+		break;
+	case 7:
+		Wczytaj();
+		break;
+	case 8:
+		
 		break;
 	default:
 		cout << "Zly numer" << endl;
@@ -153,4 +161,26 @@ void Pokaz()
 	}
 	
 
+}
+void Wczytaj()
+{
+	int i;
+	char znak;
+	fstream plik;
+
+	string nazwa,plikk;
+	
+	plik.open("plik.txt", ios::out);
+	if (!plik.good()) { Wczytaj(); }
+	plik >> plikk;
+	for (i = 0; i < rozmiar; i++)
+	{
+		if(plikk[i]==' ')
+		{
+			
+		}
+		else {
+			tablica[i] = plikk[i];
+		}
+	}
 }
