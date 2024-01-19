@@ -164,6 +164,11 @@ void Pokaz()
 }
 void Wczytaj()
 {
+	if (tablica1 == false)
+	{
+		cout << "najpierw dodaj tablice" << endl;
+		menu();
+	}
 	int i;
 	char znak;
 	fstream plik;
@@ -175,12 +180,16 @@ void Wczytaj()
 	plik >> plikk;
 	for (i = 0; i < rozmiar; i++)
 	{
-		if(plikk[i]==' ')
+		if(plikk[i]!=' ')
 		{
-			
+			if(plikk[i]=='1' or plikk[i]=='0' or plikk[i]=='2' or plikk[i]=='3' or plikk[i]=='4' or plikk[i]=='5' or plikk[i]=='6' or plikk[i]=='7' or plikk[i]=='8' or plikk[i]=='9')
+				{
+				tablica[i]=plikk[i];
+			}
+			else{cout<< "zle dane" << endl;
+			     menu();
+			     
 		}
-		else {
-			tablica[i] = plikk[i];
-		}
+		
 	}
 }
