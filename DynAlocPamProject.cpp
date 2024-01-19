@@ -162,8 +162,8 @@ void Pokaz()
 	
 
 }
-void Wczytaj()
-{
+void Zapisz()
+{//zapisz do tablicy z pliku
 	if (tablica1 == false)
 	{
 		cout << "najpierw dodaj tablice" << endl;
@@ -192,4 +192,25 @@ void Wczytaj()
 		}
 		
 	}
+}
+void Wczytaj()
+{//wvzytaj tablice do pliku
+ std::fstream plik;
+string tabb;
+    plik.open( "plik.txt", std::ios::in | std::ios::out );
+    if( plik.good() == true )
+    {
+	 for(int i=0;i<rozmiar;i++)
+		 {
+			 tabb += tablica[i]+" ";
+		 }
+	    tabb>>plik;
+        //tu operacje na pliku (zapis/odczyt)
+        plik.close();
+    }
+    return( 0 );
+
+
+
+	
 }
