@@ -16,6 +16,7 @@ class A
     };
 class B : public A
 {
+//klasa B na podstawie klasy A
     B()
     {
         //konstruktor B
