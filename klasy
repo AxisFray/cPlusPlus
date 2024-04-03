@@ -1,32 +1,85 @@
 #include <iostream>
-using namespace std;
-class A
-    {
-    public:
-      A()
-      {
-          //konstruktor klasy A
-      }
-      ~A()
-      {
-          //destruktor klasy A
-          //nie zwraca nic
-      }
 
-    };
-class B : public A
+using namespace std;
+
+class Ludz
 {
-//klasa B na podstawie klasy A
-    B()
+public:
+    int zycie,pieniadze,poziom;
+    Ludz()
     {
-        //konstruktor B
+
     }
-    ~B()
+    ~Ludz()
     {
-     //destruktor klasy B
+
     }
 };
+class Zarzadca : public Ludz
+{
+    int dom,willa,posiadlosci;
+    Zarzadca()
+    {
+
+    }
+    ~Zarzadca()
+    {
+
+    }
+
+};
+class Rzemieslnik : public Ludz
+{
+    public:
+    int PozWarsztatu;
+    Rzemieslnik()
+    {
+
+    }
+    ~Rzemieslnik()
+    {
+
+    }
+
+};
+class Wojownik : Ludz
+{
+    public:
+    int posiadlosci, bron,zbroja,kon;
+    Wojownik()
+    {
+
+    }
+    ~Wojownik()
+    {
+
+    }
+};
+class Kupiec : Ludz
+{
+    public:
+    int wielblady,koszyki;
+    int owoce,warzywa,zloto;
+    Kupiec()
+    {
+
+    }
+    ~Kupiec()
+    {
+
+
+    }
+
+};
+
 int main()
 {
-    A ob1;
+    Kupiec Ania;
+    Ania.warzywa = 15;
+
+
+
+
+
+
 }
