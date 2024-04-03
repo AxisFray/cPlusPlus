@@ -1,0 +1,31 @@
+#include <iostream>
+using namespace std;
+class A
+    {
+    public:
+      A()
+      {
+          //konstruktor klasy A
+      }
+      ~A()
+      {
+          //destruktor klasy A
+          //nie zwraca nic
+      }
+
+    };
+class B : public A
+{
+    B()
+    {
+        //konstruktor B
+    }
+    ~B()
+    {
+     //destruktor klasy B
+    }
+};
+int main()
+{
+    A ob1;
+}
