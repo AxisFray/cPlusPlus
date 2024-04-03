@@ -2,10 +2,22 @@
 
 using namespace std;
 
+class Ekwipunek
+    {
+        public:
+        int rozmiar;
+        int Ek[10];
+        int zmianaRozmiaru()
+        {
+
+        }
+    };
+
 class Ludz
 {
 public:
     int zycie,pieniadze,poziom;
+    Ekwipunek Eq;
     Ludz()
     {
 
@@ -14,6 +26,7 @@ public:
     {
 
     }
+
 };
 class Zarzadca : public Ludz
 {
@@ -28,10 +41,10 @@ class Zarzadca : public Ludz
     }
 
 };
-class Rzemieslnik : public Ludz
+class Rzemieslnik :  Ludz
 {
     public:
-    int PozWarsztatu;
+    int PoziomWarsztatu,drewno,narzedzia;
     Rzemieslnik()
     {
 
@@ -76,8 +89,7 @@ int main()
 {
     Kupiec Ania;
     Ania.warzywa = 15;
-
-
+    Ania.Eq.Ek[0] = 10;
 
 
 
