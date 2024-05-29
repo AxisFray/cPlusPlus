@@ -1,0 +1,65 @@
+  -  -  -  -  -  -  -  -  - -  -  -  -  -  -  -  -  - TABLICE -  -  -  -  -  -  -  -  - -  -  -  -  -  -  -  -  - 
+string cars[4] = {"Volvo", "BMW", "Ford", "Mazda"};
+int myNum[3] = {10, 20, 30};
+//pętla foreach
+for (int i : myNumbers) {
+  cout << i << "\n";
+}
+//rozmiar tablicy
+sizeof(tablica) / sizeof(int)
+
+//tablice wielowymiarowe
+string letters[2][4] = {
+  { "A", "B", "C", "D" },
+  { "E", "F", "G", "H" }
+};
+
+  -  -  -  -  -  -  -  -  - -  -  -  -  -  -  -  -  - WSKAŹNIKI -  -  -  -  -  -  -  -  - -  -  -  -  -  -  -  -  - 
+int telefon = 12345;    //zmienna liczbowa
+int *wsk = &telefon;    //wskaźnik wsk zawiera adres zmiennej telefon
+
+int telefon = 12345;         //zmienna liczbowa
+int *wsk = &telefon;         //przypisanie wskaźnikowi adresu zmiennej telefon
+										         
+cout << *wsk << endl;        //wyświetlenie wyłuskanej wartości wskaźnika (12345)
+cout << wsk << endl;         //wyświetlenie adresu zmiennej telefon
+cout << &wsk << endl;        //wyświetlenie adresu wskaźnika
+cout << &telefon << endl;    //wyświetlenie adresu zmiennej telefon
+
+Wartość wskaźnika (zmiennej na którą wskazuje) możemy modyfikować bez uzycia nazwy zmiennej:
+
+int telefon = 12345;    //zmienna liczbowa
+int *wsk = &telefon;    //wskaźnik wsk zawiera adres zmiennej telefon
+
+*wsk = 666;
+cout << *wsk << endl;
+
+// TABLICE WIELOWYMIAROWE
+
+int * tablica = new int[3];
+
+tablica[0] = 11;
+tablica[1] = 12;
+tablica[2] = 13;
+
+delete [] tablica;
+
+//TABLICA DWUWYMIAROWA
+int * tablica = new int[rozmiar];
+int ** tablica = new int * [3];
+
+tablica[0] = new int [3];   // wskaźnik tablica[0] wskazuje na nową tablicę
+tablica[1] = new int [3];   // wskaźnik tablica[1] wskazuje na nową tablicę
+tablica[2] = new int [3];   // wskaźnik tablica[2] wskazuje na nową tablicę
+
+tablica[2][2] = 123;
+cout << tablica[2][2];
+
+// zwalniamy pamiec
+delete [] tablica[0];
+delete [] tablica[1];
+delete [] tablica[2];
+delete [] tablica;
+
+
+
